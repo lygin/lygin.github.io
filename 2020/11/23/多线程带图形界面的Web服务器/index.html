@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | lygin</title>
+  <title>简易多线程带图形界面的Web服务器 | lygin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="lygin�Ĳ���">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lygin">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+  <meta name="description" content="简介我使用Qt 和C++ 多线程库实现的简单web 服务器，能解析HTTP 请求报文并构造相应的响应报文，具有一定的异常处理功能。 开发环境操作系统：    Windows 10 Pro 64-bit编译器：        MinGW 7.3.0 32-bit开发平台：    Qt 5.12.9">
+<meta name="keywords" content="c++&amp;Qt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简易多线程带图形界面的Web服务器">
+<meta property="og:url" content="http://yoursite.com/2020/11/23/多线程带图形界面的Web服务器/index.html">
 <meta property="og:site_name" content="lygin">
-<meta property="og:description" content="lygin�Ĳ���">
+<meta property="og:description" content="简介我使用Qt 和C++ 多线程库实现的简单web 服务器，能解析HTTP 请求报文并构造相应的响应报文，具有一定的异常处理功能。 开发环境操作系统：    Windows 10 Pro 64-bit编译器：        MinGW 7.3.0 32-bit开发平台：    Qt 5.12.9">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/p5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/p6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/p7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/p8.jpg">
+<meta property="og:updated_time" content="2021-05-06T13:03:11.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lygin">
-<meta name="twitter:description" content="lygin�Ĳ���">
+<meta name="twitter:title" content="简易多线程带图形界面的Web服务器">
+<meta name="twitter:description" content="简介我使用Qt 和C++ 多线程库实现的简单web 服务器，能解析HTTP 请求报文并构造相应的响应报文，具有一定的异常处理功能。 开发环境操作系统：    Windows 10 Pro 64-bit编译器：        MinGW 7.3.0 32-bit开发平台：    Qt 5.12.9">
+<meta name="twitter:image" content="http://yoursite.com/images/p5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lygin" type="application/atom+xml">
   
@@ -143,60 +150,269 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-多线程带图形界面的Web服务器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/04/八数码问题简单解决办法/" class="archive-article-date">
-  	<time datetime="2019-10-04T03:27:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/04/八数码问题简单解决办法/">八数码问题简单解决办法</a>
+    <h1 class="article-title" itemprop="name">
+      简易多线程带图形界面的Web服务器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/11/23/多线程带图形界面的Web服务器/" class="archive-article-date">
+  	<time datetime="2020-11-23T10:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我使用Qt 和C++ 多线程库实现的简单web 服务器，能解析HTTP 请求报文并构造相应的响应报文，<br>具有一定的异常处理功能。</p>
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>操作系统：    Windows 10 Pro 64-bit<br>编译器：        MinGW 7.3.0 32-bit<br>开发平台：    Qt 5.12.9 </p>
+<a id="more"></a>
+
+<h3 id="具备功能"><a href="#具备功能" class="headerlink" title="具备功能"></a>具备功能</h3><ul>
+<li>可配置Web服务器的监听地址、监听端口和主目录；</li>
+<li>能够多线程处理多个请求。当一个客户（浏览器,输入URL：<a href="http://202.103.2.3/index.html）连接时创建一个连接套接字；" target="_blank" rel="noopener">http://202.103.2.3/index.html）连接时创建一个连接套接字；</a></li>
+<li>从连接套接字接收http请求报文，并根据请求报文的确定用户请求的网页文件；</li>
+<li>从服务器的文件系统获得请求的文件。 创建一个由请求的文件组成的http响应报文。；</li>
+<li>经TCP连接向请求的浏览器发送响应，浏览器可以正确显示网页的内容；</li>
+<li>能够传输包含多媒体（如图片，视频）的网页给客户端，并能在客户端正确显示；</li>
+<li>在服务器端的屏幕上输出请求的来源（IP地址、端口号和HTTP请求命令行）；</li>
+<li>在服务器端的屏幕上能够输出对每一个请求处理的结果；</li>
+<li>对于无法成功定位文件的请求，根据错误原因，作相应错误提示，并具备一定的异常情况处理能力。</li>
+<li>构造了简洁实用的GUI界面，使得用户操作更清晰简明。</li>
+</ul>
+<h3 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h3><p><img src="/images/p5.jpg" alt></p>
+<p>图中，主线程用来运行GUI界面模块，GUI模块开始监听后，将会创建一个监听子线程Listenthread，监听子线程完成接受来自客户端的连接后，将会发送AcceptOK，然后创建一个发送信息的子线程Sendthread，利用已经连接的socket与客户端进行通信。另外，send线程会发送响应报头和请求文件传输给客户端，并返回RespondOK，之后，send线程会更新BufInfo，并发出BufInfo已经被更新的信号，GUI接受到被更新的信号后会从BufInfo中读取信息来更新GUI的显示。</p>
+<p>这样实现不仅有利于模块的管理和修改，还有利于GUI界面信息和服务端和客户端通信信息的统一，实现实时显示。</p>
+<h3 id="GUI模块"><a href="#GUI模块" class="headerlink" title="GUI模块"></a>GUI模块</h3><p>用户GUI界面的模块主要包括显示数据模块、修改主目录模块、修改监听地址模块、修改监听端口模块和开始结束模块，其主要功能为与用户进行交互并将交互数据发送给核心线程进行处理。显示数据模块的主要功能是显示由send线程发送的缓冲区数据，每当send缓冲区发生改变时，send线程发送信号给图形用户界面以更新其内容。</p>
+<h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><p>主要就是使用Qt提供的一些API，对按钮添加事件的监听器，对不同的事件作出不同的响应，以及日志的显示。这里日志的显示参考了后端框架Flask的日志格式，满足了实验对于日志输出的要求。实验中主要遇到的难点就是对于Qt线程机制的理解。由于在Qt中始终要有一个主线程用于事件的循环，如果将web服务器放到Qt的主线程中执行，就会发生阻塞，所有的点击事件以及日志显示全部都被阻塞，所以需要使用QThread库，将原来的server包装成一个继承自QObject的子类，并定义run(),stop()等方法。在使用的时候将其放入workerthread中执行。这样才解决了GUI阻塞的问题。</p>
+<p>GUI主要是通过创建一个UI类（MainWindow类）实现的，下面简单介绍一下这个类的结构，具体的功能见注释。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QMainWindow&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"server.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Ui &#123;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span> :</span> <span class="keyword">public</span> QMainWindow</span><br><span class="line">&#123;<span class="comment">//基于Qt5.12的ui类</span></span><br><span class="line">    Q_OBJECT</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Ui::MainWindow *ui;</span><br><span class="line">    WSADATA mWsaData;</span><br><span class="line">    SOCKET listenSocket=INVALID_SOCKET;<span class="comment">//监听的socket</span></span><br><span class="line">    ListenThread *lsThread;<span class="comment">//服务器指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">MainWindow</span><span class="params">(QWidget *parent = <span class="number">0</span>)</span></span>;<span class="comment">//显式构造函数</span></span><br><span class="line">    ~MainWindow();<span class="comment">//析构函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">closeEvent</span><span class="params">(QCloseEvent *event)</span></span>;<span class="comment">//关闭所有活动，退出</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> slots:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">on_startPushBotton_clicked</span><span class="params">()</span></span>;<span class="comment">//开始监听按钮</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">on_endPushBotton_clicked</span><span class="params">()</span></span>;<span class="comment">//结束监听按钮</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">on_pathPushBotton_clicked</span><span class="params">()</span></span>;<span class="comment">//打开主目录</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">on_actionAbout_triggered</span><span class="params">()</span></span>;<span class="comment">//校交1802李俊信息</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>由于GUI模块不是本次实验的重点，具体各个部分实现的细节就不详细展开了。具体的实现细节可以参考源码的注释</p>
+<h3 id="server模块"><a href="#server模块" class="headerlink" title="server模块"></a>server模块</h3><p>Server模块主要由listen模块和send模块实现。</p>
+<p><strong>Listen模块主要实现的功能：</strong></p>
+<ol>
+<li>后台启动Listen线程(run函数部分)与客户端连接，防止阻塞UI主线程</li>
+<li>监听端口，如果某个客户程序要求连接的时候，会新开启新线程SendThread与客户端通信</li>
+<li>如果不是监听端口或者监听地址，直接断开连接，发送拒绝请求页面。如果是监听端口和监听地址，开启新线程与客户端通信。</li>
+<li>新线程会建立并返回一个新的SOCKET来与对方通信，新建的SOCKET与原来的SOCKET有相同的特性，包括端口号。原来的SOCKET继续等待其他的连接请求。而新生成的SOCKET才是与客户端通信的实际SOCKET。</li>
+<li>接受新线程发来的消息，更新UI缓冲区。</li>
+</ol>
+<p><strong>Send模块主要实现的功能：</strong></p>
+<p>①在已经和客户端通信连接的基础上，根据客户端请求报文设置服务器响应报文头部。</p>
+<p>②如果URL正常能够GET到服务器的资源，发送200 OK的响应报文，并发送对应的资源文件给客户端，如果不能定位，则根据错误类型发送响应的响应报文。</p>
+<p>③将本次通信的信息发送给UI的BUF缓冲区，用于UI主线程更新界面信息。</p>
+<h4 id="具体实现-1"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现</h4><p>Server模块是本次实验的核心模块，它完成了端口的监听及与客户端进行通信的功能。</p>
+<p>下面简单说明server模块中每个部分的关键点：</p>
+<p>①<strong>多线程的创建以及管理</strong></p>
+<p>在查询了相关资料之后发现如果使用thread库的话，相关函数的参数传递还是很麻烦，所以最终使用了thread库，用来创建多线程。由于创建的线程在detach之后就没有什么非常方便的办法来判断是否结束,所以就包装了一个类listenThread,用其中的一个字段来判断会话是否结束.同时维护了一个listenThread的列表对象,用于存放当前还在处理的会话,根据列表的长度对请求进行限制,如果达到了设置的上限,就阻塞循环,直到有线程结束为止.这样就实现了对线程数量的限制，为了防止阻塞监听线程，还创建了sendThread用于解析请求报文并发送响应报文和对应的请求文件给客户端。</p>
+<p><strong>②解析请求资源的路径</strong></p>
+<p>由于请求的路径中可能存在[/.]以及[/..],所以需要对这些符号进行适当的处理,虽然说直接打开没什么大问题,但是可能会导致用户可以请求到设置的根目录之上的文件,进而对web服务的隐私产生影响,所以需要对请求路径进行处理,如果是违规请求就发送501 Not Implement响应.在具体解析的时候不断地对’/./’以及’/../’进行处理，直到URL中没有为止 。</p>
+<p>③<strong>响应报文的构建和发送</strong></p>
+<p>主要还是根据预先写好的一些主流文件类型对应的content-type,找到请求文件对应的content-type,再进行发送.在发送文件的时候,有可能会出现由于文件过大,导致无法装入内存的问题,所以就没有直接将整个文件装入内存再发送,而是配合利用C中fread和socket库的send函数,类似于流式文件,每次发送1024个字节。</p>
+<p>④<strong>请求报文解析</strong></p>
+<p>主要就是利用map对象,实现字符串到字符串的映射,用于存储请求中的header字段</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QThread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QObject&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> server &#123;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AcceptThread</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SendThread</span> :</span> <span class="keyword">public</span> QThread</span><br><span class="line">&#123;<span class="comment">//发送客户端数据的线程</span></span><br><span class="line">    Q_OBJECT</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> clientPort;<span class="comment">//客户端接口</span></span><br><span class="line">    <span class="keyword">int</span> fileLength=<span class="number">0</span>;<span class="comment">//传送的数据大小</span></span><br><span class="line">    SOCKET acceptSocket;<span class="comment">//通信的socket</span></span><br><span class="line">    sockaddr_in clientSock;<span class="comment">//客户端IP地址</span></span><br><span class="line">    <span class="built_in">string</span> mainPath;<span class="comment">//主目录</span></span><br><span class="line">    <span class="built_in">string</span> clientAddrStr;<span class="comment">//客户端IP地址（点分10进制）</span></span><br><span class="line">    <span class="built_in">string</span> method;<span class="comment">//请求命令</span></span><br><span class="line">    <span class="built_in">string</span> url;<span class="comment">//URL</span></span><br><span class="line">    <span class="built_in">string</span> statusCode;<span class="comment">//404 NOT FOUND etc...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">SendThread</span><span class="params">(QObject *parent=<span class="number">0</span>)</span></span>;<span class="comment">//显式构造函数</span></span><br><span class="line">    ~SendThread();<span class="comment">//析构函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;<span class="comment">//启动线程</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setAcceptSocket</span><span class="params">(SOCKET s)</span></span>;<span class="comment">//设置通信的socket</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setClientAddr</span><span class="params">(sockaddr_in addr)</span></span>;<span class="comment">//设置客户端IP</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setMainPath</span><span class="params">(<span class="built_in">string</span> str)</span></span>;<span class="comment">//设置主目录</span></span><br><span class="line"></span><br><span class="line">signals:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">respondDone</span><span class="params">(QStringList msg)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListenThread</span> :</span> <span class="keyword">public</span> QThread</span><br><span class="line">&#123;<span class="comment">//接收客户端连接的线程</span></span><br><span class="line">    Q_OBJECT</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">string</span> mainPath;<span class="comment">//主目录</span></span><br><span class="line">    SOCKET listenSocket;<span class="comment">//监听socket</span></span><br><span class="line">    SendThread *sdThread;<span class="comment">//发送信息线程的指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">ListenThread</span><span class="params">(QObject *parent=<span class="number">0</span>)</span></span>;<span class="comment">//显式构造函数</span></span><br><span class="line">    ~ListenThread();<span class="comment">//析构函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setListenSocket</span><span class="params">(SOCKET s)</span></span>;<span class="comment">//设置监听队列</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setMainPath</span><span class="params">(<span class="built_in">string</span> str)</span></span>;<span class="comment">//设置主目录</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;<span class="comment">//启动线程</span></span><br><span class="line"></span><br><span class="line">signals:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">acceptOK</span><span class="params">(QStringList msg)</span></span>;<span class="comment">//可以接受信息</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">acceptDone</span><span class="params">()</span></span>;<span class="comment">//接收完成</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>可见server模块做的工作基本包含了本次实验所有的关键点：首先，创建服务器套接字并绑定套接字和服务器地址信息。然后监听端口，如果某个客户程序要求连接的时候，会新开一个线程sendthread与之进行通信。当连接数量达到最大时，再来的连接请求都将被拒绝。如果有请求，则后台启动listen线程(run函数部分)与客户端连接，防止阻塞UI主线程。如果不是监听端口或者监听地址，直接断开连接，发送拒绝请求页面。如果是监听端口和监听地址，开启新线程与客户端通信，新线程会建立并返回一个新的SOCKET来与对方通信，新建的SOCKET与原来的SOCKET有相同的特性，包括端口号。原来的SOCKET继续等待其他的连接请求。而新生成的SOCKET才是与客户端通信的实际SOCKET。最后接受新线程发来的消息，更新UI缓冲区。</p>
+<h3 id="Config模块"><a href="#Config模块" class="headerlink" title="Config模块"></a>Config模块</h3><p>Config模块主要用于设置关键的全局变量。如设置服务器端口、客户端端口、服务器监控地址、最大缓冲区长度、HTTP版本号等等。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Config</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> DEFAULT_SERVER_PORT;       <span class="comment">//服务器默认端口号</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> DEFAULT_CLIENT_PORT;       <span class="comment">//客户端默认监听端口</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> MAX_CONNECTION_NUM;        <span class="comment">//最大连接数</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> BUF_LENGTH;                <span class="comment">//缓冲区大小</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> DEFAULT_SERVER_ADDR_STR; <span class="comment">//服务器默认监听地址</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> OK_STATUS_STR;          <span class="comment">//客户端请求成功</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> ERROR_METHOD_STR;        <span class="comment">//客户端语法错误</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> DENY_STR;               <span class="comment">//该客户端不在服务范围</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> NOT_FOUND_STR;          <span class="comment">//文件不存在</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> DEFAULT_HTTP_VERSION_STR;       <span class="comment">//HTTP版本</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">string</span> SERVER_STR;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Config();</span><br><span class="line">    ~Config();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><h4 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h4><p>操作系统：     Windows 10 Pro 64-bit</p>
+<p>浏览器：    Google Chrome 86.0.4240.75（64-bit）</p>
+<h4 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h4><p>①配置监听地址，监听窗口及监听主目录，点击START，开始监听。</p>
+<p><img src="/images/p6.jpg" alt></p>
+<p>②访问服务器主页<a href="http://127.0.0.1:8888/index.html，查看服务器是否能够响应客户端的请求。" target="_blank" rel="noopener">http://127.0.0.1:8888/index.html，查看服务器是否能够响应客户端的请求。</a></p>
+<p><img src="/images/p7.jpg" alt></p>
+<p>如上图所示，服务器能够响应客户端的请求，并定位相应的html文件。这也说明服务器可以正常在监听端口上进行监听并且能够收到客户端请求时能创建连接套接字。</p>
+<p>③查看与客户端通信时客户端的请求报文。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/index.html</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 127.0.0.1:8888</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line"><span class="attribute">Sec-Fetch-Site</span>: none</span><br><span class="line"><span class="attribute">Sec-Fetch-Mode</span>: navigate</span><br><span class="line"><span class="attribute">Sec-Fetch-User</span>: ?1</span><br><span class="line"><span class="attribute">Sec-Fetch-Dest</span>: document</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate, br</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.9,en-CN;q=0.8,en;q=0.7</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，请求报文包括请求命令行为GET，请求文件为/index.html，HTTP版本号为HTTP/1.1。除此之外，还包括Host，浏览器版本，接受语言等等信息</p>
+<p>④本服务器支持多种类型文件的输出，如txt文本，jpg/jpeg图片，html文件，MP3音频，MP4视频等等。在这里就不展示啦。</p>
+<p>⑤查看文件响应的来源，并在服务器端的屏幕上输出每个请求的来源（IP地址、端口号和HTTP请求命令行），具体如下图所示</p>
+<p><img src="/images/p8.jpg" alt></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>输入的URL不能有中文，服务器系统没有对中文编码进行识别</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] Computer Networking A Top-Down Approach(7th Edition)</p>
+<p>[2] 池义勇,李巧云,杨新峰;<a href="http://www.cnki.com.cn/Article/CJFDTOTAL-DLXZ199705006.htm" target="_blank" rel="noopener">Web服务器CGI程序的设计与实现</a>[J];电脑学习;2010年05期</p>
+<p>[3] 马毅;<a href="http://cdmd.cnki.com.cn/Article/CDMD-10697-2008076853.htm" target="_blank" rel="noopener">轻量级Web服务器的实现与应用</a>[D];西北大学;2015年</p>
+<p>[4] 郭静盈;<a href="http://cdmd.cnki.com.cn/Article/CDMD-10703-2009135294.htm" target="_blank" rel="noopener">基于IPv6的HTTP Server的研究与实现</a>[D];西安建筑科技大学;2009年</p>
+<p>[5] 王雷,TCP/IP网络编程基础教程,北京理工大学出版社,2017.02,第4页</p>
+<p>[6] 潘伟编著,计算机网络 理论与实验,厦门大学出版社,2013.12,第145页</p>
+<p>[7] 计算机网络:自顶向下方法(原书第 7 版)/(美)詹姆斯.F.库罗斯,(美) 基思.W.罗斯著;陈明泽.—北京:机械工业出版社,2018</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/payme.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ACM水题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">c++&Qt</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/23/多线程带图形界面的Web服务器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/02/03/基于raft算法的分布式KV数据库/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于raft一致性算法的分布式KV数据库
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/07/03/算法模板/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法竞赛模板</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发环境"><span class="toc-number">2.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具备功能"><span class="toc-number">3.</span> <span class="toc-text">具备功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总体设计"><span class="toc-number">4.</span> <span class="toc-text">总体设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GUI模块"><span class="toc-number">5.</span> <span class="toc-text">GUI模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#具体实现"><span class="toc-number">5.1.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#server模块"><span class="toc-number">6.</span> <span class="toc-text">server模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#具体实现-1"><span class="toc-number">6.1.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Config模块"><span class="toc-number">7.</span> <span class="toc-text">Config模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能测试"><span class="toc-number">8.</span> <span class="toc-text">功能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试环境"><span class="toc-number">8.1.</span> <span class="toc-text">测试环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试功能"><span class="toc-number">8.2.</span> <span class="toc-text">测试功能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">9.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-number">10.</span> <span class="toc-text">参考文献</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -219,8 +435,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
