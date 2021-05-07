@@ -17,13 +17,13 @@
 <meta property="og:description" content="aut : HUST-李俊 Overview通过一系列的project，来搭建起来一个基于raft 一致性算法的分布式键值存储  project1：  构建一个独立的 kv server（只有1个node)  project2：  基于raft算法实现分布式键值服务器 -2a：实现基本的raft一致性算法，三个部分-a：Leader选举 , -b:日志同步，-c:节点接口 -2b：利用2a实现的R">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-ee29a89e4eb63468e142bb6103dbe4de_720w.jpg">
-<meta property="og:image" content="c:/Users/15255/AppData/Roaming/Typora/typora-user-images/image-20201220213936889.png">
+<meta property="og:image" content="http://yoursite.com/images/p17.jpg">
 <meta property="og:image" content="c:/Users/15255/AppData/Roaming/Typora/typora-user-images/image-20201219184452086.png">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*iKWRRabaMNEAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*YFTGRbfg8XIAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*wcVDTo4CfrwAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*77gySo2CTewAAAAAAAAAAABjARQnAQ">
-<meta property="og:updated_time" content="2021-05-05T01:58:29.432Z">
+<meta property="og:updated_time" content="2021-05-07T13:37:01.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于raft一致性算法的分布式KV数据库">
 <meta name="twitter:description" content="aut : HUST-李俊 Overview通过一系列的project，来搭建起来一个基于raft 一致性算法的分布式键值存储  project1：  构建一个独立的 kv server（只有1个node)  project2：  基于raft算法实现分布式键值服务器 -2a：实现基本的raft一致性算法，三个部分-a：Leader选举 , -b:日志同步，-c:节点接口 -2b：利用2a实现的R">
@@ -246,8 +246,7 @@
 <p><strong>代码编写部分：</strong><code>raft/rawnode.go</code></p>
 </li>
 <li><p>根据自己的理解，理清楚整个流程（个人理解5层）：</p>
-<img src="C:\Users\15255\AppData\Roaming\Typora\typora-user-images\image-20201220213936889.png" alt="image-20201220213936889" style="zoom:50%;">
-
+<p><img src="/images/p17.jpg" alt></p>
 <p><strong>代码编写部分：</strong><code>kv/raftstore/peer_msg_handler.go</code>中处理Raft命令的<code>proposeRaftCommand</code> func</p>
 <p>处理Raft返回ready时的<code>handleRaftReady</code>函数</p>
 <p><strong>注意点：</strong>2b复杂的测试函数，可能会因内存不足导致卡死，可以修改Makefile逐一对测试函数进行测试。</p>
@@ -1014,6 +1013,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACM水题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c++&Qt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
              
@@ -1023,26 +1042,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACM水题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c++&Qt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
