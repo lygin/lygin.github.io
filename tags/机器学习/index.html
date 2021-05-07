@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Dijkstra + DFS 模板化解决最短路径系列问题 | lygin</title>
+  <title>Tag: 机器学习 | lygin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原题描述：A1111 A1087 Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.">
-<meta name="keywords" content="算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Dijkstra + DFS 模板化解决最短路径系列问题">
-<meta property="og:url" content="http://yoursite.com/2020/05/03/dijkstra/index.html">
+  <meta name="description" content="lygin�Ĳ���">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lygin">
+<meta property="og:url" content="http://yoursite.com/tags/机器学习/index.html">
 <meta property="og:site_name" content="lygin">
-<meta property="og:description" content="原题描述：A1111 A1087 Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.">
+<meta property="og:description" content="lygin�Ĳ���">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-03T09:21:55.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dijkstra + DFS 模板化解决最短路径系列问题">
-<meta name="twitter:description" content="原题描述：A1111 A1087 Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.">
+<meta name="twitter:title" content="lygin">
+<meta name="twitter:description" content="lygin�Ĳ���">
   
     <link rel="alternative" href="/atom.xml" title="lygin" type="application/atom+xml">
   
@@ -145,227 +143,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-dijkstra" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Dijkstra + DFS 模板化解决最短路径系列问题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/07/24/基于SVM的语音性别识别分类算法/" class="archive-article-date">
+  	<time datetime="2020-07-24T11:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/07/24/基于SVM的语音性别识别分类算法/">基于SVM的语音性别识别分类算法</a>
     </h1>
   
 
-        
-        <a href="/2020/05/03/dijkstra/" class="archive-article-date">
-  	<time datetime="2020-05-03T09:10:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原题描述：<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805358663417856" target="_blank" rel="noopener">A1111</a> <a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805379664297984" target="_blank" rel="noopener">A1087</a></p>
-<p>Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.</p>
-<a id="more"></a>
-
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 positive integers <em>N</em> (2≤<em>N</em>≤200), the number of cities, and <em>K</em>, the total number of routes between pairs of cities; followed by the name of the starting city. The next <em>N</em>−1 lines each gives the name of a city and an integer that represents the happiness one can gain from that city, except the starting city. Then <em>K</em> lines follow, each describes a route between two cities in the format <code>City1 City2 Cost</code>. Here the name of a city is a string of 3 capital English letters, and the destination is always <code>ROM</code> which represents Rome.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, we are supposed to find the route with the least cost. If such a route is not unique, the one with the maximum happiness will be recommanded. If such a route is still not unique, then we output the one with the maximum average happiness – it is guaranteed by the judge that such a solution exists and is unique.</p>
-<p>Hence in the first line of output, you must print 4 numbers: the number of different routes with the least cost, the cost, the happiness, and the average happiness (take the integer part only) of the recommanded route. Then in the next line, you are supposed to print the route in the format <code>City1-&gt;City2-&gt;...-&gt;ROM</code>.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">6 7 HZH</span><br><span class="line">ROM 100</span><br><span class="line">PKN 40</span><br><span class="line">GDN 55</span><br><span class="line">PRS 95</span><br><span class="line">BLN 80</span><br><span class="line">ROM GDN 1</span><br><span class="line">BLN ROM 1</span><br><span class="line">HZH PKN 1</span><br><span class="line">PRS ROM 2</span><br><span class="line">BLN HZH 2</span><br><span class="line">PKN GDN 1</span><br><span class="line">HZH PRS 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 3 195 97</span><br><span class="line">HZH-&gt;PRS-&gt;ROM</span><br></pre></td></tr></table></figure>
-
-<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">210</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> n, k, st, ed;</span><br><span class="line"><span class="keyword">int</span> vis[N], c[N], num[N], cost[N][N], pre[N], weight[N], w[N], num2[N];</span><br><span class="line"><span class="built_in">string</span> m[N];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; m2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dij</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//initial</span></span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="built_in">memset</span>(w, <span class="number">0</span>, <span class="keyword">sizeof</span>(w));</span><br><span class="line">	fill(c, c+N, INF);</span><br><span class="line">	fill(num, num+N, INF);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) pre[i] = i;</span><br><span class="line">	c[st] = <span class="number">0</span>;</span><br><span class="line">	w[st] = <span class="number">0</span>;</span><br><span class="line">	num[st] = <span class="number">0</span>;</span><br><span class="line">	num2[st] = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//traverse</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) &#123;</span><br><span class="line">		<span class="comment">//cout &lt;&lt; num[m2["PRS"]] &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//find min d[]</span></span><br><span class="line">		<span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[j] &amp;&amp; c[j] &lt; MIN) &#123;</span><br><span class="line">				MIN = c[j];</span><br><span class="line">				u = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//set true</span></span><br><span class="line">		<span class="keyword">if</span>(u == <span class="number">-1</span>) <span class="keyword">return</span> ;</span><br><span class="line">		vis[u] = <span class="literal">true</span>;</span><br><span class="line">		<span class="comment">//set adj</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">1</span>; v&lt;=n; ++v) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[v] &amp;&amp; cost[u][v] != INF) &#123;</span><br><span class="line">				<span class="keyword">if</span>(c[u] + cost[u][v] &lt; c[v]) &#123;</span><br><span class="line">					c[v] = c[u] + cost[u][v];</span><br><span class="line">					num[v] = num[u] +<span class="number">1</span>;</span><br><span class="line">					w[v] = w[u] + weight[v];</span><br><span class="line">					pre[v] = u;</span><br><span class="line">					num2[v] = num2[u];</span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span>(c[u] + cost[u][v] == c[v] ) &#123;</span><br><span class="line">					<span class="keyword">if</span>(w[u] + weight[v] &gt; w[v]) &#123;</span><br><span class="line">					w[v] = w[u] + weight[v];</span><br><span class="line">					num[v] = num[u]+<span class="number">1</span>;</span><br><span class="line">					pre[v] = u;</span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span>( w[u] + weight[v] == w[v] &amp;&amp; num[u] + <span class="number">1</span> &lt; num[v]) &#123;</span><br><span class="line">					num[v] = num[u]+<span class="number">1</span>;</span><br><span class="line">					pre[v] = u;</span><br><span class="line">					&#125;</span><br><span class="line">					num2[v] += num2[u];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_res</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">	<span class="keyword">int</span> p = ed;</span><br><span class="line">	v.push_back(p);</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		p = pre[p];</span><br><span class="line">		v.push_back(p);</span><br><span class="line">	&#125; <span class="keyword">while</span>(pre[p] != p);</span><br><span class="line">	<span class="keyword">int</span> len = v.size()<span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d %d\n"</span>, num2[ed], c[ed], w[ed], w[ed]/len);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=len; i&gt;=<span class="number">0</span>; --i) &#123;</span><br><span class="line">		<span class="keyword">if</span>(i != len) <span class="built_in">printf</span>(<span class="string">"-&gt;"</span>);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; m[v[i]];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fill(cost[<span class="number">0</span>], cost[<span class="number">0</span>]+N*N, INF);</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; s;</span><br><span class="line">	m[<span class="number">1</span>] = s; m2[s] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> hap;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s &gt;&gt; hap;</span><br><span class="line">		m[i] = s; m2[s] = i;</span><br><span class="line">		weight[i] = hap;</span><br><span class="line">	&#125;</span><br><span class="line">	st = <span class="number">1</span>, ed = m2[<span class="string">"ROM"</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; ++i) &#123;</span><br><span class="line">		<span class="built_in">string</span> s1, s2; <span class="keyword">int</span> costa;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2 &gt;&gt; costa;</span><br><span class="line">		cost[m2[s1]][m2[s2]] = cost[m2[s2]][m2[s1]] = costa;</span><br><span class="line">	&#125;</span><br><span class="line">	Dij();</span><br><span class="line">	print_res();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Dijkstra-DFS"><a href="#Dijkstra-DFS" class="headerlink" title="Dijkstra + DFS"></a>Dijkstra + DFS</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">210</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, k, st, ed;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; pre[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> c[N], G[N][N], num[N], w[N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tempPath, path;</span><br><span class="line"><span class="keyword">int</span> resHap = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">string</span> m[N];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; m2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dij</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	fill(c, c+N, INF); </span><br><span class="line">	c[s] = <span class="number">0</span>;</span><br><span class="line">	num[s] = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[j] &amp;&amp; c[j] &lt; MIN) &#123;</span><br><span class="line">				MIN = c[j];</span><br><span class="line">				u = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(u == <span class="number">-1</span>) <span class="keyword">return</span> ;</span><br><span class="line">		vis[u] = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">1</span>; v&lt;=n; ++v) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[v] &amp;&amp; G[u][v] != INF) &#123;</span><br><span class="line">				<span class="keyword">if</span>(c[u] + G[u][v] &lt; c[v]) &#123;</span><br><span class="line">					c[v] = c[u] + G[u][v];</span><br><span class="line">					num[v] = num[u];</span><br><span class="line">					pre[v].clear();</span><br><span class="line">					pre[v].push_back(u);</span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span>(c[u] + G[u][v] == c[v]) &#123;</span><br><span class="line">					num[v] += num[u];</span><br><span class="line">					pre[v].push_back(u);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(v == st) &#123;</span><br><span class="line">		tempPath.push_back(v);</span><br><span class="line">		<span class="keyword">int</span> tempHap = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=tempPath.size()<span class="number">-1</span>; i&gt;=<span class="number">0</span>; --i) &#123;</span><br><span class="line">			<span class="keyword">int</span> id = tempPath[i];</span><br><span class="line">			tempHap += w[id];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(tempHap &gt; resHap) &#123;</span><br><span class="line">			resHap = tempHap;</span><br><span class="line">			path = tempPath;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(tempHap == resHap &amp;&amp; tempPath.size() &lt; path.size()) &#123;</span><br><span class="line">			path = tempPath;</span><br><span class="line">		&#125;</span><br><span class="line">		tempPath.pop_back(); </span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	tempPath.push_back(v);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;pre[v].size(); ++i) dfs(pre[v][i]);</span><br><span class="line">	tempPath.pop_back();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fill(G[<span class="number">0</span>], G[<span class="number">0</span>]+N*N, INF);</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; s;</span><br><span class="line">	st = <span class="number">1</span>; m[<span class="number">1</span>] = s; m2[s] = <span class="number">1</span>;</span><br><span class="line">	w[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> L;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s &gt;&gt; L;</span><br><span class="line">		m[i] =  s; m2[s] = i;</span><br><span class="line">		w[i] = L;</span><br><span class="line">	&#125;</span><br><span class="line">	ed = m2[<span class="string">"ROM"</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; ++i) &#123;</span><br><span class="line">		<span class="built_in">string</span> s1, s2; <span class="keyword">int</span> C;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2 &gt;&gt; C;</span><br><span class="line">		G[m2[s1]][m2[s2]] = G[m2[s2]][m2[s1]] = C;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Dij(st);</span><br><span class="line">	dfs(ed);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d %d\n"</span>, num[ed], c[ed], resHap, resHap/(path.size()<span class="number">-1</span>));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=path.size()<span class="number">-1</span>; i&gt;=<span class="number">0</span>; --i) &#123;</span><br><span class="line">		<span class="keyword">if</span>(i != path.size()<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"-&gt;"</span>);</span><br><span class="line">		<span class="keyword">int</span> id = path[i];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; m[id];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>1111</strong> <strong>Online Map</strong></p>
-<p>Input our current position and a destination, an online map can recommend several paths. Now your job is to recommend two paths to your user: one is the shortest, and the other is the fastest. It is guaranteed that a path exists for any request.</p>
-<h3 id="Input-Specification-1"><a href="#Input-Specification-1" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line gives two positive integers <em>N</em> (2≤<em>N</em>≤500), and <em>M</em>, being the total number of streets intersections on a map, and the number of streets, respectively. Then <em>M</em> lines follow, each describes a street in the format:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V1 V2 one-way length time</span><br></pre></td></tr></table></figure>
-
-<p>where <code>V1</code> and <code>V2</code> are the indices (from 0 to <em>N</em>−1) of the two ends of the street; <code>one-way</code> is 1 if the street is one-way from <code>V1</code> to <code>V2</code>, or 0 if not; <code>length</code> is the length of the street; and <code>time</code> is the time taken to pass the street.</p>
-<p>Finally a pair of source and destination is given.</p>
-<h3 id="Output-Specification-1"><a href="#Output-Specification-1" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each case, first print the shortest path from the source to the destination with distance <code>D</code> in the format:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Distance = D: source -&gt; v1 -&gt; ... -&gt; destination</span><br></pre></td></tr></table></figure>
-
-<p>Then in the next line print the fastest path with total time <code>T</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Time = T: source -&gt; w1 -&gt; ... -&gt; destination</span><br></pre></td></tr></table></figure>
-
-<p>In case the shortest path is not unique, output the fastest one among the shortest paths, which is guaranteed to be unique. In case the fastest path is not unique, output the one that passes through the fewest intersections, which is guaranteed to be unique.</p>
-<p>In case the shortest and the fastest paths are identical, print them in one line in the format:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Distance = D; Time = T: source -&gt; u1 -&gt; ... -&gt; destination</span><br></pre></td></tr></table></figure>
-
-<h3 id="Dijkstra-x2"><a href="#Dijkstra-x2" class="headerlink" title="Dijkstra x2"></a>Dijkstra x2</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">510</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, st, ed;</span><br><span class="line"><span class="keyword">int</span> d[N], t[N], G[N][N], num[N], T[N][N], pre[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path1, path2; <span class="keyword">int</span> resd, rest;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dij1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fill(d, d+N, INF);</span><br><span class="line">	fill(t, t+N, INF);</span><br><span class="line">	fill(num, num+N, INF);</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) pre[i] = i;</span><br><span class="line">	d[st] = <span class="number">0</span>;</span><br><span class="line">	t[st] = <span class="number">0</span>;</span><br><span class="line">	num[st] = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[j] &amp;&amp; d[j] &lt; MIN) &#123;</span><br><span class="line">				MIN = d[j];</span><br><span class="line">				u = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(u == <span class="number">-1</span>) <span class="keyword">return</span> ;</span><br><span class="line">		vis[u] = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">0</span>; v&lt;n; ++v) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[v] &amp;&amp; G[u][v] != INF) &#123;</span><br><span class="line">				<span class="keyword">if</span>(d[u] + G[u][v] &lt; d[v]) &#123;</span><br><span class="line">					d[v] = d[u] + G[u][v];</span><br><span class="line">					t[v] = t[u] + T[u][v];</span><br><span class="line">					pre[v] = u;</span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span>(d[u] + G[u][v] == d[v]) &#123;</span><br><span class="line">					<span class="keyword">if</span>(t[u] + T[u][v] &lt; t[v]) &#123;</span><br><span class="line">						t[v] = t[u] + T[u][v];</span><br><span class="line">						pre[v] = u;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dij2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fill(d, d+N, INF);</span><br><span class="line">	fill(t, t+N, INF);</span><br><span class="line">	fill(num, num+N, INF);</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) pre[i] = i;</span><br><span class="line">	d[st] = <span class="number">0</span>;</span><br><span class="line">	t[st] = <span class="number">0</span>;</span><br><span class="line">	num[st] = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[j] &amp;&amp; t[j] &lt; MIN) &#123;</span><br><span class="line">				MIN = t[j];</span><br><span class="line">				u = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(u == <span class="number">-1</span>) <span class="keyword">return</span> ;</span><br><span class="line">		vis[u] = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">0</span>; v&lt;n; ++v) &#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[v] &amp;&amp; T[u][v] != INF) &#123;</span><br><span class="line">				<span class="keyword">if</span>(t[u] + T[u][v] &lt; t[v]) &#123;</span><br><span class="line">					t[v] = t[u] + T[u][v];</span><br><span class="line">					num[v] = num[u] + <span class="number">1</span>;</span><br><span class="line">					pre[v] = u;</span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span>(t[u] + T[u][v] == t[v]) &#123;</span><br><span class="line">					<span class="keyword">if</span>(num[u] + <span class="number">1</span> &lt; num[v]) &#123;</span><br><span class="line">						num[v] = num[u] + <span class="number">1</span>;</span><br><span class="line">						pre[v] = u;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">keep</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> p = ed;</span><br><span class="line">	<span class="keyword">while</span>(pre[p] != p) &#123;</span><br><span class="line">		v.push_back(p);</span><br><span class="line">		p = pre[p];</span><br><span class="line">	&#125;</span><br><span class="line">	v.push_back(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_path</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=v.size()<span class="number">-1</span>; i&gt;=<span class="number">0</span>; --i) &#123;</span><br><span class="line">		<span class="keyword">if</span>(i != v.size()<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">" -&gt; "</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, v[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fill(G[<span class="number">0</span>], G[<span class="number">0</span>]+N*N, INF);</span><br><span class="line">	fill(T[<span class="number">0</span>], T[<span class="number">0</span>]+N*N, INF);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> a, b, c, dis, e;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d"</span>, &amp;a, &amp;b, &amp;c, &amp;dis, &amp;e);</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="number">1</span>) &#123;</span><br><span class="line">			G[a][b] = dis;</span><br><span class="line">			T[a][b] = e;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			G[b][a] = G[a][b] = dis;</span><br><span class="line">			T[b][a] = T[a][b] = e;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;st, &amp;ed);</span><br><span class="line">	Dij1();</span><br><span class="line">	resd = d[ed];</span><br><span class="line">	keep(path1);</span><br><span class="line">	Dij2();</span><br><span class="line">	rest = t[ed];</span><br><span class="line">	keep(path2);</span><br><span class="line">	<span class="keyword">if</span>(path1 == path2) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Distance = %d; Time = %d: "</span>, resd, rest);</span><br><span class="line">		print_path(path1);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Distance = %d: "</span>, resd);</span><br><span class="line">		print_path(path1);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Time = %d: "</span>, rest);</span><br><span class="line">		print_path(path2);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/payme.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/03/dijkstra/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/07/03/算法模板/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          算法竞赛模板
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/04/16/基于kNN的人脸识别算法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于KNN的人脸识别算法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra"><span class="toc-number">5.</span> <span class="toc-text">Dijkstra</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra-DFS"><span class="toc-number">6.</span> <span class="toc-text">Dijkstra + DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification-1"><span class="toc-number">7.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification-1"><span class="toc-number">8.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra-x2"><span class="toc-number">9.</span> <span class="toc-text">Dijkstra x2</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -388,9 +219,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
