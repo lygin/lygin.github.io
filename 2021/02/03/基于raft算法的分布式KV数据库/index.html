@@ -16,18 +16,18 @@
 <meta property="og:site_name" content="lygin">
 <meta property="og:description" content="aut : HUST-李俊 Overview通过一系列的project，来搭建起来一个基于raft 一致性算法的分布式键值存储  project1：  构建一个独立的 kv server（只有1个node)  project2：  基于raft算法实现分布式键值服务器 -2a：实现基本的raft一致性算法，三个部分-a：Leader选举 , -b:日志同步，-c:节点接口 -2b：利用2a实现的R">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-ee29a89e4eb63468e142bb6103dbe4de_720w.jpg">
 <meta property="og:image" content="http://yoursite.com/images/p17.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-ee29a89e4eb63468e142bb6103dbe4de_720w.jpg">
 <meta property="og:image" content="c:/Users/15255/AppData/Roaming/Typora/typora-user-images/image-20201219184452086.png">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*iKWRRabaMNEAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*YFTGRbfg8XIAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*wcVDTo4CfrwAAAAAAAAAAABjARQnAQ">
 <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_da499f/afts/img/A*77gySo2CTewAAAAAAAAAAABjARQnAQ">
-<meta property="og:updated_time" content="2021-05-07T13:37:01.748Z">
+<meta property="og:updated_time" content="2021-05-08T07:10:13.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于raft一致性算法的分布式KV数据库">
 <meta name="twitter:description" content="aut : HUST-李俊 Overview通过一系列的project，来搭建起来一个基于raft 一致性算法的分布式键值存储  project1：  构建一个独立的 kv server（只有1个node)  project2：  基于raft算法实现分布式键值服务器 -2a：实现基本的raft一致性算法，三个部分-a：Leader选举 , -b:日志同步，-c:节点接口 -2b：利用2a实现的R">
-<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-ee29a89e4eb63468e142bb6103dbe4de_720w.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/p17.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lygin" type="application/atom+xml">
   
@@ -192,6 +192,8 @@
 <li><p>project4： 构建<code>transaction system</code>实现多客户端通信，主要两个部分：<code>MVCC</code>和 <code>transactional API</code></p>
 </li>
 </ul>
+<p>根据自己的理解，理清楚整个流程（个人理解5层）：</p>
+<p><img src="/images/p17.jpg" alt></p>
 <h3 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h3><h5 id="Batch-and-Pipeline"><a href="#Batch-and-Pipeline" class="headerlink" title="Batch and Pipeline"></a>Batch and Pipeline</h5><p>首先可以做的就是 batch，在很多情况下面，使用 batch 能明显提升性能，譬如对于 RocksDB 的写入来说，我们通常不会每次写入一个值，而是会用一个 WriteBatch 缓存一批修改，然后在整个写入。 对于 Raft 来说，Leader 可以一次收集多个 requests，然后一批发送给 Follower。当然，我们也需要有一个最大发送 size 来限制每次最多可以发送多少数据。</p>
 <p>如果只是用 batch，Leader 还是需要等待 Follower 返回才能继续后面的流程，我们这里还可以使用 Pipeline 来进行加速。Leader 会维护一个 NextIndex 的变量来表示下一个给 Follower 发送的 log 位置。当 Leader 给 Follower 发送了一批 log 之后，它可以直接更新 NextIndex，并且立刻发送后面的 log，不需要等待 Follower 的返回。如果网络出现了错误，或者 Follower 返回一些错误，Leader 就需要重新调整 NextIndex，然后重新发送 log 了。</p>
 <h5 id="Append-Log-Parallelly"><a href="#Append-Log-Parallelly" class="headerlink" title="Append Log Parallelly"></a>Append Log Parallelly</h5><p> Leader 可以先并行的将 log 发送给 Followers，然后再将 log append。如果一个 log 被大多数的节点append，我们就可以认为这个 log 是被 committed 了。因为 append log 会涉及到落盘，有开销，所以我们完全可以在 Leader 落盘的同时让 Follower 也尽快的收到 log 并 append。</p>
@@ -244,9 +246,6 @@
 </li>
 <li><p>实现Rawnode接口：<code>raft.RawNode</code>是与上层应用程序交互的接口，如发送<code>message</code>给其他<code>Peer</code></p>
 <p><strong>代码编写部分：</strong><code>raft/rawnode.go</code></p>
-</li>
-<li><p>根据自己的理解，理清楚整个流程（个人理解5层）：</p>
-<p><img src="/images/p17.jpg" alt></p>
 <p><strong>代码编写部分：</strong><code>kv/raftstore/peer_msg_handler.go</code>中处理Raft命令的<code>proposeRaftCommand</code> func</p>
 <p>处理Raft返回ready时的<code>handleRaftReady</code>函数</p>
 <p><strong>注意点：</strong>2b复杂的测试函数，可能会因内存不足导致卡死，可以修改Makefile逐一对测试函数进行测试。</p>
@@ -1013,26 +1012,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACM水题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c++&Qt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
              
@@ -1041,7 +1020,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c++&Qt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACM水题</a>
               </li>
             
             <div class="clearfix"></div>
