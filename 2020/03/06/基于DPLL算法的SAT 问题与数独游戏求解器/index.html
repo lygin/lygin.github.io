@@ -6,25 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基于Linux 系统的任务监视器 | lygin</title>
+  <title>基于DPLL算法的SAT问题与数独游戏求解器 | lygin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介用户以及程序均可以通过/proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息均是动态改变的，会经常的进行更新，所以用户或应用程序读取/proc获取文件的时候，/proc文件系统是动态的从系统的内核中获取信息并且提供给用户或应用程序的。 用户或者应用程序若需要获取系统信息的时候，只需要进行相应的文件操作。首先相应的文件（/proc）文件打开，然后将所需要的信息写入缓冲区当中，然后将缓">
-<meta name="keywords" content="小工具">
+  <meta name="description" content="简介SAT问题即命题逻辑公式的可满足性问题（satisfiability problem），是计算机科学与人工智能基本问题，是一个典型的NP完全问题，可广泛应用于许多实际问题如硬件设计、安全协议验证等，具有重要理论意义与应用价值。本设计要求基于DPLL算法实现一个完备SAT求解器，对输入的CNF范式算例文件，解析并建立其内部表示；精心设计问题中变元、文字、子句、公式等有效的物理存储结构以及一定的分">
+<meta name="keywords" content="NP完全问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Linux 系统的任务监视器">
-<meta property="og:url" content="http://yoursite.com/2021/03/09/Linux系统资源监视器/index.html">
+<meta property="og:title" content="基于DPLL算法的SAT问题与数独游戏求解器">
+<meta property="og:url" content="http://yoursite.com/2020/03/06/基于DPLL算法的SAT 问题与数独游戏求解器/index.html">
 <meta property="og:site_name" content="lygin">
-<meta property="og:description" content="简介用户以及程序均可以通过/proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息均是动态改变的，会经常的进行更新，所以用户或应用程序读取/proc获取文件的时候，/proc文件系统是动态的从系统的内核中获取信息并且提供给用户或应用程序的。 用户或者应用程序若需要获取系统信息的时候，只需要进行相应的文件操作。首先相应的文件（/proc）文件打开，然后将所需要的信息写入缓冲区当中，然后将缓">
+<meta property="og:description" content="简介SAT问题即命题逻辑公式的可满足性问题（satisfiability problem），是计算机科学与人工智能基本问题，是一个典型的NP完全问题，可广泛应用于许多实际问题如硬件设计、安全协议验证等，具有重要理论意义与应用价值。本设计要求基于DPLL算法实现一个完备SAT求解器，对输入的CNF范式算例文件，解析并建立其内部表示；精心设计问题中变元、文字、子句、公式等有效的物理存储结构以及一定的分">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/p1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/p2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/p3.jpg">
-<meta property="og:image" content="http://yoursite.com/images/p4.jpg">
-<meta property="og:updated_time" content="2021-05-05T14:09:50.140Z">
+<meta property="og:image" content="http://yoursite.com/images/p18.jpg">
+<meta property="og:updated_time" content="2021-05-08T13:26:41.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Linux 系统的任务监视器">
-<meta name="twitter:description" content="简介用户以及程序均可以通过/proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息均是动态改变的，会经常的进行更新，所以用户或应用程序读取/proc获取文件的时候，/proc文件系统是动态的从系统的内核中获取信息并且提供给用户或应用程序的。 用户或者应用程序若需要获取系统信息的时候，只需要进行相应的文件操作。首先相应的文件（/proc）文件打开，然后将所需要的信息写入缓冲区当中，然后将缓">
-<meta name="twitter:image" content="http://yoursite.com/images/p1.jpg">
+<meta name="twitter:title" content="基于DPLL算法的SAT问题与数独游戏求解器">
+<meta name="twitter:description" content="简介SAT问题即命题逻辑公式的可满足性问题（satisfiability problem），是计算机科学与人工智能基本问题，是一个典型的NP完全问题，可广泛应用于许多实际问题如硬件设计、安全协议验证等，具有重要理论意义与应用价值。本设计要求基于DPLL算法实现一个完备SAT求解器，对输入的CNF范式算例文件，解析并建立其内部表示；精心设计问题中变元、文字、子句、公式等有效的物理存储结构以及一定的分">
+<meta name="twitter:image" content="http://yoursite.com/images/p18.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lygin" type="application/atom+xml">
   
@@ -150,93 +147,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux系统资源监视器" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-基于DPLL算法的SAT 问题与数独游戏求解器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      基于Linux 系统的任务监视器
+      基于DPLL算法的SAT问题与数独游戏求解器
     </h1>
   
 
         
-        <a href="/2021/03/09/Linux系统资源监视器/" class="archive-article-date">
-  	<time datetime="2021-03-09T09:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
+        <a href="/2020/03/06/基于DPLL算法的SAT 问题与数独游戏求解器/" class="archive-article-date">
+  	<time datetime="2020-03-06T13:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>用户以及程序均可以通过/proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息均是动态改变的，会经常的进行更新，所以用户或应用程序读取/proc获取文件的时候，/proc文件系统是动态的从系统的内核中获取信息并且提供给用户或应用程序的。</p>
-<p>用户或者应用程序若需要获取系统信息的时候，只需要进行相应的文件操作。首先相应的文件（/proc）文件打开，然后将所需要的信息写入缓冲区当中，然后将缓冲区的内容加入到GTK相应的控件当中，最后将所有的控件进行组合的显示。</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>SAT问题即命题逻辑公式的可满足性问题（satisfiability problem），是计算机科学与人工智能基本问题，是一个典型的NP完全问题，可广泛应用于许多实际问题如硬件设计、安全协议验证等，具有重要理论意义与应用价值。本设计要求基于DPLL算法实现一个完备SAT求解器，对输入的CNF范式算例文件，解析并建立其内部表示；精心设计问题中变元、文字、子句、公式等有效的物理存储结构以及一定的分支变元处理策略，使求解器具有优化的执行性能；对一定规模的算例能有效求解，输出与文件保存求解结果，统计求解时间。</p>
 <a id="more"></a>
 
-<h3 id="porc-文件系统"><a href="#porc-文件系统" class="headerlink" title="/porc 文件系统"></a>/porc 文件系统</h3><p>/proc 文件系统是一个虚拟文件系统，通过它可以使用一种新的方法在 Linux 内核空间和用户间之间进行通信。在 /proc 文件系统中，我们可以将对虚拟文件的读写作为与内核中实体进行通信的一种手段，但是与普通文件不同的是， 这些虚拟文件的内容都是动态创建的。</p>
-<p>/proc 文件系统存在于系统的/proc 目录下，与其它常见的文件系统不同的是， 它并不是真正意义上的文件系统，它存在于内存中，并不占用磁盘空间，它包含一些结构化的目录和虚拟文件，向用户呈现内核中的一些信息，也可以用作一种从用户空间向内核发送信息的手段。</p>
-<p>这些虚拟文件使用查看命令查看时会返回大量信息，但文件本身的大小却会显示为 0 字节。此外，这些特殊文件中大多数文件的时间及日期属性通常为当前系统时间和日期。</p>
-<h3 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h3><p>系统监视器总体设计图如下图所示:</p>
-<p><img src="/images/p1.jpg" alt></p>
-<h4 id="①进程详细信息"><a href="#①进程详细信息" class="headerlink" title="①进程详细信息"></a>①进程详细信息</h4><p>/proc 文件系统中存在着很多以数字为文件名的文件夹，这些文件夹包含的就是对应进程号的详细信息，其中我们要获取进程的详细信息被存放在 status 和stat 两个文件内。</p>
-<p>他们的区别是 status 比较直观，按行列出了进程的每个属性和其对应的值， 而 stat 则是只有数字，每个一个空格一个。</p>
-<p>这里为了方便读取，针对 stat 进行操作，我们需要的以下几位的数据：</p>
-<p>1)   第 1 位：pid，进程号</p>
-<p>2)   第 2 位：name，进程名</p>
-<p>3)   第 3 位：status，进程状态</p>
-<p>4)   第 4 位：ppid，父进程号</p>
-<p>5)   第 18 位：priority，优先级</p>
-<p>6)   第 23 位：memory，占用内存</p>
-<h4 id="②进程查询及杀死"><a href="#②进程查询及杀死" class="headerlink" title="②进程查询及杀死"></a>②进程查询及杀死</h4><p>通过pid查询一个进程，并提供杀掉该进程的功能。</p>
-<p>1）字符串匹配定位pid</p>
-<p>2）调用scroll_to_line切换到对应行</p>
-<p>3）通过系统调用<code>kill(atoi(now_pid), SIGKILL)</code>杀死进程</p>
-<h4 id="③系统信息查询"><a href="#③系统信息查询" class="headerlink" title="③系统信息查询"></a>③系统信息查询</h4><p>处理系统信息。通过读取proc文件获取系统信息，处理后通过GTK图形化显示出来</p>
-<p>(1)获取并显示主机名</p>
-<p>/proc/sys/kernel/hostname</p>
-<p>(2)显示系统的版本号</p>
-<p>/proc/sys/kernel/ostype</p>
-<p>内核版本号</p>
-<p>/proc/sys/kernel/osrelease</p>
-<p>(3)GCC版本号</p>
-<p>/proc/version</p>
-<p>(4)显示系统到目前为止持续运行的时间</p>
-<p>/proc/uptime</p>
-<p>(5)显示当前时</p>
-<p>stTim = localtime(&amp;tTime)</p>
-<p>(6)关机功能</p>
-<p>system(“shutdown”)</p>
-<h4 id="④CPU信息查询"><a href="#④CPU信息查询" class="headerlink" title="④CPU信息查询"></a>④CPU信息查询</h4><p>CPU 相关的信息被存放在/proc/cpuinfo 文件里，按行列出了每个 CPU 每个属性和其对应的值。</p>
-<p>我们需要的是以下几行的信息：</p>
-<p>1）第 5 行：model name，CPU 名</p>
-<p>2）第 8 行：cpu MHz，CPU 主频</p>
-<p>3）第 9 行：cache size，缓存大小</p>
-<p>4）第 13 行：cpu cores，CPU 核数</p>
-<p>5）第 25 行：address sizes，地址空间</p>
-<h4 id="⑤CPU利用率计算"><a href="#⑤CPU利用率计算" class="headerlink" title="⑤CPU利用率计算"></a>⑤CPU利用率计算</h4><p>CPU的利用率还需要由计算获得，其数据在/proc/stat 文件内，该文件每行记录了一个 CPU 的数据。如下图所示</p>
-<p>其中前7个数据依次代表的含义如下：</p>
-<p><img src="/images/p2.jpg" alt></p>
-<p>计算公式如下：</p>
-<p>总的使用时间 = ( user2+ nice2+ system2+ idle2+ iowait2+ irq2+ softirq2) - ( user1+ nice1+ system1+ idle1+ iowait1+ irq1+ softirq1)</p>
-<p>空闲时间 = (idle2 - idle1)</p>
-<p>利用率 = 1 - CPU空闲时间 / CPU总的使用时间 * 100%</p>
-<h4 id="⑥内存相关的信息"><a href="#⑥内存相关的信息" class="headerlink" title="⑥内存相关的信息"></a>⑥内存相关的信息</h4><p>被存放在/proc/meminfo 文件里，也按行列出了内存的每个属性和其对应的值。</p>
-<p>我们需要的是以下几行的信息：</p>
-<p>第 1 行：MemTotal，总内存大小</p>
-<p>第 2 行：MemFree，剩余可用内存大小</p>
-<p>第 15 行：SwapTotal，交换空间大小</p>
-<p>第 16 行：cpu cores，剩余可用交换空间大小</p>
-<p>内存利用率直接利用(1 – free / total) * 100%即可</p>
-<h4 id="⑦多线程"><a href="#⑦多线程" class="headerlink" title="⑦多线程"></a>⑦多线程</h4><p>本系统核心在于在一个定时周期T内，System Monitor需要对上述的大部分信息进行实时刷新，而如果全部在主进程内进行，频繁的读写与实时交互将共同运行在一个进程内，会造成严重的卡顿现象。</p>
-<p>为了解决这一问题，主进程将完全用于交互，且另创建多个线程，分别用于读和写，具体来说：</p>
-<p>首先，创建信号灯，对每一个共享资源x，如时间、进程等，要设置两个信号灯，分别为x_empty、令初值为1，x_full、令初值为0。</p>
-<p>对于读线程，使用Timer进行计时，每隔一个刷新周期，将触发信号，先对x_empty使用P操作，然后读取信息，再对x_full使用V操作。</p>
-<p>对于写线程，不额外计时，而通过信号灯进行判断何时可以开始写数据，写线程运行后，将一直尝试对x_full进行P操作，可知只有读线程读取完成时，即对x_full使用完V操作时，写线程才可以开始写。</p>
-<p>通过这种方式，写线程不必等待读线程全部读取完再写，因为这样会造成较大的时间延迟，并且读写顺序得到了保证，从而减少了卡顿，使系统管理器运行得更加流畅。</p>
-<h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p>截取部分运行结果展示如下</p>
-<p><img src="/images/p3.jpg" alt></p>
-<p><img src="/images/p4.jpg" alt></p>
+<h3 id="具备功能"><a href="#具备功能" class="headerlink" title="具备功能"></a>具备功能</h3><ol>
+<li>输入输出功能：包括程序执行参数的输入，SAT算例cnf文件的读取，执行结果的输出与文件保存等。</li>
+<li>公式解析与验证：读取cnf算例文件，解析文件，基于一定的物理结构，建立公式的内部表示；并实现对解析正确性的验证功能，即遍历内部结构逐行输出与显示每个子句，与输入算例对比可人工判断解析功能的正确性</li>
+<li>DPLL过程：基于DPLL算法框架，实现SAT算例的求解</li>
+<li>程序优化：对基本DPLL的实现进行存储结构、分支变元选取策略等方面进行优化设计与实现。</li>
+<li>SAT应用：将数独游戏问题转化为SAT问题，并集成到上面的求解器进行问题求解，游戏可玩，具有一定的/简单的交互性。</li>
+</ol>
+<h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>在实际应用方面，许多实际可抽象为NP完全问题，因此我们可以将它们归约为SAT问题进行求解，如模型检验问题，自动规划问题等。正是由于SAT问题有着重大的理论和实际意义，它备受国际关注，每年国际上都会举行一次SAT竞赛。而且随着科技发展，人们对于SAT求解的规模不断给出更高的要求，一些针对大规模的SAT问题的求解器应运而生，如Chaff、zChaff、minisat、Lingeling等诸多著名求解器。所以探寻<br>SAT问题的高效算法是一个吸引人的、富有挑战性的研究课题。</p>
+<h3 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h3><p>原始的DPLL算法虽然能够证明SAT问题的可满足性，还能给出其准确解，但是其决策变量的选取有很大的盲目性，好的决策可能不用回溯或者通过极少的回溯就能找到问题的解，而坏的决策可能要验证大量的冗余变量，甚至要将问题所有的解都验证一遍才能得到问题的准确解，要知道就算一个中等规模的SAT问题它所有可能解的组合也是极为庞大的，这样就造成了极大的时间上的浪费。所以本文主要是致力于研究变量决策对于SAT问题求解算法的影响，提出了最短正子句优先决策。</p>
+<p>最短正子句优先决策，就是对子句集中所有的文字都是正子句的子句按照子句长度进行排序，从中选择长度最短的子句，从该子句选取第一个没有被赋值的文字最为决策变量对其进行赋值，然后进行BCP过程，发生冲突时则回溯到当前选择的最短子句，重新选择其他剩余的文字为决策变量。当所有的正子句都处理完之后，剩下来的都含有负文字，所以只需将这些负文字都赋值为真就行了，这样能减少大量不必要的推导时间。</p>
+<h3 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h3><p>系统分为用户交互模块，SAT模块以及二进制数独模块。<br>其中SAT模块中要有解析CNF公式的模块和求解CNF的DPLL模块，CNF解析模块又分为CNF导入模块和CNF显示模块。<br>而二进制数独模块又分为用户交互部分，难度选择部分，生成初盘部分，游戏操作部分，求解初盘部分五个部分。</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>本系统用十字链接表作为物理结构，该十字链接表中主要包括指向文字指针数组和子句指针数组的头节点，还有一些记录，包括变元数目、子句数、实际存在的子句数、空语句数、单子句数等等。</p>
+<p>十字链接表中的每一个节点都表示CNF公式中一个文字，节点中还有一些记录，包括标识该节点是否存在的标志、该文字在第几行字句、还有指向横向和纵向的下一文字的指针等。</p>
+<p>每一子句的头节点都包含表示子句被隐藏次数的标志、当前子句实际所含变元数目、子句中所含正文字数目、标识子句是否是正文子子句的标志以及指向子句中第一个文字的指针，如下图所示。</p>
+<p><img src="/images/p18.jpg" alt></p>
+<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><p>（1）LoadCNF（SAT* S）</p>
+<p>操作结果：将cnf文件中的cnf公式导入到十字链接表中。</p>
+<p>算法思想：从文件顺序获取相应的数据，每获取一个文字就调用函数添加一个节点。当跳转到下一子句时，只需将当前添加文字的行数加一即可。</p>
+<p>时间复杂度：若设cnf公式有m条子句和每条子句有n个文字，也就是一共有m<em>n个文字，那么时间复杂度为O(m</em>n)。</p>
+<p>（2）Simplify（SAT *S, int num）</p>
+<p>操作结果：根据num进行单子句推导，与num正负相同的子句隐藏</p>
+<p>算法思想：首先根据d=|num|找到该文字在文字数组中的位置，然后纵向寻找，进行单子句推导。</p>
+<p>时间复杂度：假设要推导的文字在整个cnf公式中包含正负一共有n个，那么时间复杂度为O(n)。</p>
+<p>（3）variable_decide(SAT *S,int &amp;var, int *v2,int *stack,int &amp;top, int &amp;RawNext)</p>
+<p>操作结果：根据最短正子句原则，求出当前的决策变量</p>
+<p>算法思想：首先根据每个子句的是否是正子句和实际存在的正文字数目，找出当前最短正子句中的实际存在的第一个正文字，并将它作为决策变量；若没有正子句，就将子句中的所有负文字都赋值为真即可。</p>
+<p>时间复杂度：考虑最坏情况，最短正子句在整个公式的最后，那么假设整个公式有m条子句，时间复杂度为O(m)。</p>
+<p>（4）bcp_deduce(SAT *S,int &amp;var, int *v2,int *stack,int &amp;top)</p>
+<p>操作结果：根据所选的决策变量，进行bcp推导，直到求出解或者推出矛盾或者没有单子句为止。</p>
+<p>算法思想：先利用所选的决策变量进行单子句传播（调用Simplify函数），然后利用单子句规则处理期间所产生的所有单子句，直到没有单子句或者求出解或者推出矛盾。</p>
+<p>时间复杂度：此算法时间复杂度不好分析，只是考虑最坏情况要将所有的情况都要尝试完，那么时间复杂度为指数级。</p>
+<p>（5）Cancel(SAT *S,int *v2,int *stack,int d,int &amp;top)</p>
+<p>操作结果：将栈中从栈顶开始直到第一个未翻转的决策变量所做的推导都取消。</p>
+<p>算法思想：循环退栈，取出栈顶文字，利用文字数组将与该文字相关的所有操作都取消。</p>
+<p>时间复杂度：考虑最坏情况，假设栈中包含所有文字，并且要将栈退完，那么若整个cnf公式有n个节点，时间复杂度为O(n)。</p>
+<p>（6） DPLL(SAT* S)</p>
+<p>操作结果：若cnf公式有解或者有多解，给出一个解；若cnf公式无解，给出无解提示。</p>
+<p>算法思想：首先若有空子句，直接返回，然后进行单子句预处理，将所有单子句都处理完，接着进行一个循环：变量决策-&gt;bcp推导-&gt;取消无效蕴含-&gt;变量决策，直到推出正确解或者尝试完所有解给出无解提示。</p>
+<p>时间复杂度：由于整个DPLL一般有80%-90%的时间都是落在bcp上，而bcp是指数量级的，那么此算法也是指数量级的。</p>
+<p>（7） get_solution (vector&lt;vector<char> &gt; &amp;board)</char></p>
+<p>操作结果: 如果是有唯一解的棋盘，则生成该唯一解；否则生成棋盘的某个解。</p>
+<p>算法思想：利用三个规则将数独初盘转化为cnf公式，然后将保存为cnf文件，再用DPLL求解器解析文件，得到空白编号1-64的真假值，真填1，假填0，最后的到棋盘的解。由于涉及转化，文件输出，文件读入，DPLL解析等众多步骤，当棋局复杂，文件较大时，时间复杂度接近指数级，求解所需时间开销比较大。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常量定义 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASTABLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAILURE -3 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW1 -4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数据结构定义 </span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> status;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LitNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> flag; <span class="comment">//标志变量，flag为1时说明变元存在</span></span><br><span class="line">	<span class="keyword">int</span> raw; <span class="comment">//记录文字所在子句行数</span></span><br><span class="line">	<span class="keyword">int</span> num; <span class="comment">//记录文字的值（有正负） </span></span><br><span class="line">	LitNode* right; <span class="comment">//指向横向中下一个文字 </span></span><br><span class="line">	LitNode* down; <span class="comment">//指向纵向中下一个文字</span></span><br><span class="line">&#125;LitNode; <span class="comment">//文字结点 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">CnfNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> flag; <span class="comment">//标志变量，flag为1时说明子句存在，flag为0说明子句隐藏</span></span><br><span class="line">	<span class="keyword">int</span> Lit; <span class="comment">//该行子句中实际所含的变元数目 </span></span><br><span class="line">	<span class="keyword">int</span> pnum; <span class="comment">//子句中的正文字数目 </span></span><br><span class="line">	<span class="keyword">int</span> pflag;<span class="comment">//标志变量，标记是否为正文字子句</span></span><br><span class="line">	LitNode* next; <span class="comment">//指向该行子句的第一个文字 </span></span><br><span class="line">&#125;CnfNode; <span class="comment">//每行子句的头节点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> Litnum; <span class="keyword">int</span> Claunum; <span class="comment">//Litnum为变元数量，Claunum为子句数量 </span></span><br><span class="line">	<span class="keyword">int</span> NClaunum; <span class="comment">//实际存在的子句数目</span></span><br><span class="line">	<span class="keyword">int</span> EmptyClau; <span class="comment">//空语句的数目 </span></span><br><span class="line">	<span class="keyword">int</span> UnitClau; <span class="comment">//表示单子句数目 </span></span><br><span class="line">	<span class="keyword">int</span> positive; <span class="comment">//正文字子句的数目</span></span><br><span class="line">	<span class="keyword">int</span> *v1;</span><br><span class="line">	<span class="keyword">int</span> time; </span><br><span class="line">	CnfNode *Clause;LitNode *Literal; <span class="comment">//Clause指向子句集，Literal指向变元集 </span></span><br><span class="line">&#125;SAT;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Change</span><span class="params">(<span class="keyword">char</span> *str)</span></span>; <span class="comment">//stoi</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Change1</span><span class="params">(<span class="keyword">char</span> *str,<span class="keyword">int</span> d)</span></span>; <span class="comment">//atoi</span></span><br><span class="line"><span class="function">status <span class="title">AddLit</span><span class="params">(SAT *S, <span class="keyword">int</span> raw, <span class="keyword">int</span> d)</span></span>; <span class="comment">//添加文字 </span></span><br><span class="line"><span class="function">status <span class="title">Simplify</span><span class="params">(SAT *S,<span class="keyword">int</span> num)</span></span>; <span class="comment">//根据单子句规则对子句集S进行化简 </span></span><br><span class="line"><span class="function">status <span class="title">variable_decide</span><span class="params">(SAT *S,<span class="keyword">int</span> &amp;var, <span class="keyword">int</span> *v2,<span class="keyword">int</span> *<span class="built_in">stack</span>,<span class="keyword">int</span> &amp;top, <span class="keyword">int</span> &amp;RawNext)</span></span>; <span class="comment">//决策变量的选择</span></span><br><span class="line"><span class="function">status <span class="title">bcp_deduce</span><span class="params">(SAT *S,<span class="keyword">int</span> &amp;var, <span class="keyword">int</span> *v2,<span class="keyword">int</span> *<span class="built_in">stack</span>,<span class="keyword">int</span> &amp;top)</span></span>; <span class="comment">//bcp推理</span></span><br><span class="line"><span class="function">status <span class="title">Cancel</span><span class="params">(SAT *S,<span class="keyword">int</span> *v2,<span class="keyword">int</span> *<span class="built_in">stack</span>,<span class="keyword">int</span> d,<span class="keyword">int</span> &amp;top)</span></span>; <span class="comment">//无效蕴涵取消 </span></span><br><span class="line"><span class="function">status <span class="title">Output1</span><span class="params">(SAT *S,<span class="keyword">int</span> n)</span></span>; <span class="comment">//输出res文件</span></span><br><span class="line"></span><br><span class="line"><span class="function">status <span class="title">InitiaSAT</span><span class="params">(SAT* &amp;S)</span></span>; <span class="comment">//初始化SAT求解器</span></span><br><span class="line"><span class="function">status <span class="title">LoadCNF</span><span class="params">(SAT* S)</span></span>; <span class="comment">//导入cnf算例</span></span><br><span class="line"><span class="function">status <span class="title">ShowCNF</span><span class="params">(SAT* S)</span></span>; <span class="comment">//cnf算例演示</span></span><br><span class="line"><span class="function">status <span class="title">DestroySAT</span><span class="params">(SAT* &amp;S)</span></span>; <span class="comment">//销毁SAT求解器</span></span><br><span class="line"><span class="function">status <span class="title">DPLL</span><span class="params">(SAT* S)</span></span>; <span class="comment">//求解并输出结果 </span></span><br><span class="line"><span class="function">status <span class="title">Regain</span><span class="params">(SAT *S,<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span>; <span class="comment">//SAT求解器初始化</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>（1）首先对SAT求解器做了实现，其中包含用十字链表的物理结构表示文字结点之间的关系、解析CNF公式以用合适的数据结构表示及通过合适的变量决策，子句简化，BCP推导等方法实现核心DPLL功能，最后将CNF解析及DPLL结合实现SAT求解器。<br>（2）对于该SAT求解器的优化方面，首当其冲的就是变量决策，因为变量决策是下面一系列操作的根本，如果没有好的变量决策方法，后面的工作将会复杂很多，因此对变量决策方面做了重点优化，用了最短正子句决策，并对优化后执行时间的快慢做了简单的分析，发现优化后效率提升情况十分可观。<br>（3）对于SAT的应用方面，将实现的SAT求解器应用到二进制数独游戏中，将二进制数独游戏转化为SAT问题，再集成到SAT求解器中求解，最后实现SAT求解。</p>
+<h3 id="工作展望"><a href="#工作展望" class="headerlink" title="工作展望"></a>工作展望</h3><p>在今后的研究中，主要围绕着以下两个方面开展工作。<br>（1）对于SAT求解器优化方面，借鉴国内外一些优秀的SAT求解器，如Chaff、zChaff、minisat、Lingeling等诸多著名求解器。在SAT预处理方面、新的物理结构和优秀的变量决策方面做努力，争取实现一个真正高效的SAT求解器。<br>（2）将SAT求解器应用到二进制数独以外的有关方面，在有关领域有效解决实际问题，这就需要对于SAT的应用方面做更加广泛的研究。</p>
 
       
 
@@ -276,7 +255,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NP完全问题</a>
         		</li>
       		
 		</ul>
@@ -332,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/09/Linux系统资源监视器/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/06/基于DPLL算法的SAT 问题与数独游戏求解器/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,9 +325,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/04/16/基于kNN的人脸识别算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于KNN的人脸识别算法
+        
+      </div>
+    </a>
   
-    <a href="/2021/02/03/基于raft算法的分布式KV数据库/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于raft一致性算法的分布式KV数据库</div>
+  
+    <a href="/2019/12/09/批量图片下载小工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">批量图片自动下载小工具</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#porc-文件系统"><span class="toc-number">2.</span> <span class="toc-text">/porc 文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统设计"><span class="toc-number">3.</span> <span class="toc-text">系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①进程详细信息"><span class="toc-number">3.1.</span> <span class="toc-text">①进程详细信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②进程查询及杀死"><span class="toc-number">3.2.</span> <span class="toc-text">②进程查询及杀死</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③系统信息查询"><span class="toc-number">3.3.</span> <span class="toc-text">③系统信息查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#④CPU信息查询"><span class="toc-number">3.4.</span> <span class="toc-text">④CPU信息查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⑤CPU利用率计算"><span class="toc-number">3.5.</span> <span class="toc-text">⑤CPU利用率计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⑥内存相关的信息"><span class="toc-number">3.6.</span> <span class="toc-text">⑥内存相关的信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⑦多线程"><span class="toc-number">3.7.</span> <span class="toc-text">⑦多线程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果展示"><span class="toc-number">4.</span> <span class="toc-text">效果展示</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具备功能"><span class="toc-number">2.</span> <span class="toc-text">具备功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题背景"><span class="toc-number">3.</span> <span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化算法"><span class="toc-number">4.</span> <span class="toc-text">优化算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总体设计"><span class="toc-number">5.</span> <span class="toc-text">总体设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构"><span class="toc-number">6.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法设计"><span class="toc-number">7.</span> <span class="toc-text">算法设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">8.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作展望"><span class="toc-number">10.</span> <span class="toc-text">工作展望</span></a></li></ol>
                     </div>
                 </span>
             </div>
