@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>八数码问题简单解决办法 | lygin</title>
+  <title>Go协程与并行化 | lygin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题分析：八数码问题是一个经典的BFS问题，把棋局看成一个状态图，共有9！种状态。从初始棋局开始，每次转移到下个状态，直到目标棋局为止。仔细分析可知，八数码的关键是判重，如果不去除重复状态，程序会产生很多无效状态，从而复杂度大大增加 解决算法：BFS + Cantor">
-<meta name="keywords" content="ACM水题">
+  <meta name="description" content="协程（goroutine)我们称之为 Go 协程是因为现有的术语 — 线程、协程、进程等等 — 无法准确传达它的含义。 Go 协程具有简单的模型：它是与其它 Go 协程并发运行在同一地址空间的函数。它是轻量级的， 所有消耗几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。 Go 协程在多线程操作系统上可实现多路复用，因此若一个线程阻塞">
+<meta name="keywords" content="Go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八数码问题简单解决办法">
-<meta property="og:url" content="http://yoursite.com/2019/10/04/八数码问题简单解决办法/index.html">
+<meta property="og:title" content="Go协程与并行化">
+<meta property="og:url" content="http://yoursite.com/2020/12/09/GO协程/index.html">
 <meta property="og:site_name" content="lygin">
-<meta property="og:description" content="问题分析：八数码问题是一个经典的BFS问题，把棋局看成一个状态图，共有9！种状态。从初始棋局开始，每次转移到下个状态，直到目标棋局为止。仔细分析可知，八数码的关键是判重，如果不去除重复状态，程序会产生很多无效状态，从而复杂度大大增加 解决算法：BFS + Cantor">
+<meta property="og:description" content="协程（goroutine)我们称之为 Go 协程是因为现有的术语 — 线程、协程、进程等等 — 无法准确传达它的含义。 Go 协程具有简单的模型：它是与其它 Go 协程并发运行在同一地址空间的函数。它是轻量级的， 所有消耗几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。 Go 协程在多线程操作系统上可实现多路复用，因此若一个线程阻塞">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-14T11:18:19.256Z">
+<meta property="og:updated_time" content="2021-05-09T03:05:28.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八数码问题简单解决办法">
-<meta name="twitter:description" content="问题分析：八数码问题是一个经典的BFS问题，把棋局看成一个状态图，共有9！种状态。从初始棋局开始，每次转移到下个状态，直到目标棋局为止。仔细分析可知，八数码的关键是判重，如果不去除重复状态，程序会产生很多无效状态，从而复杂度大大增加 解决算法：BFS + Cantor">
+<meta name="twitter:title" content="Go协程与并行化">
+<meta name="twitter:description" content="协程（goroutine)我们称之为 Go 协程是因为现有的术语 — 线程、协程、进程等等 — 无法准确传达它的含义。 Go 协程具有简单的模型：它是与其它 Go 协程并发运行在同一地址空间的函数。它是轻量级的， 所有消耗几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。 Go 协程在多线程操作系统上可实现多路复用，因此若一个线程阻塞">
   
     <link rel="alternative" href="/atom.xml" title="lygin" type="application/atom+xml">
   
@@ -145,37 +145,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-八数码问题简单解决办法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-GO协程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      八数码问题简单解决办法
+      Go协程与并行化
     </h1>
   
 
         
-        <a href="/2019/10/04/八数码问题简单解决办法/" class="archive-article-date">
-  	<time datetime="2019-10-04T03:27:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
+        <a href="/2020/12/09/GO协程/" class="archive-article-date">
+  	<time datetime="2020-12-09T02:35:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3><p>八数码问题是一个经典的BFS问题，把棋局看成一个状态图，共有9！种状态。从初始棋局开始，每次转移到下个状态，直到目标棋局为止。<br>仔细分析可知，八数码的关键是判重，如果不去除重复状态，程序会产生很多无效状态，从而复杂度大大增加</p>
-<h3 id="解决算法："><a href="#解决算法：" class="headerlink" title="解决算法："></a>解决算法：</h3><p>BFS + Cantor</p>
+        <h3 id="协程（goroutine"><a href="#协程（goroutine" class="headerlink" title="协程（goroutine)"></a>协程（goroutine)</h3><p>我们称之为 Go 协程是因为现有的术语 — 线程、协程、进程等等 — 无法准确传达它的含义。 Go 协程具有简单的模型：它是与其它 Go 协程并发运行在同一地址空间的函数。它是轻量级的， 所有消耗几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。</p>
+<p>Go 协程在多线程操作系统上可实现多路复用，因此若一个线程阻塞，比如说等待 I/O， 那么其它的线程就会运行。Go 协程的设计隐藏了线程创建和管理的诸多复杂性。</p>
+<p>在函数或方法前添加 <code>go</code> 关键字能够在新的 Go 协程中调用它。当调用完成后， 该 Go 协程也会安静地退出。（效果有点像 Unix Shell 中的 <code>&amp;</code> 符号，它能让命令在后台运行。）</p>
 <a id="more"></a>
 
-<h3 id="案例分析："><a href="#案例分析：" class="headerlink" title="案例分析："></a>案例分析：</h3><p>（0表示空格所在位置）<br>初始棋局：<br>|1|2|3|<br>|0|8|4|<br>|7|6|5|</p>
-<p>目标棋局：<br>|1|0|3|<br>|8|2|4|<br>|7|6|5|</p>
-<p>1.先将空格和8交换得到：<br>|1|2|3|<br>|8|0|4|<br>|7|6|5|</p>
-<p>2.再将空格和2交换得到目标棋局：<br>|1|0|3|<br>|8|2|4|<br>|7|6|5|</p>
-<p>总共执行两次操作</p>
-<h3 id="C-代码："><a href="#C-代码：" class="headerlink" title="C++代码："></a>C++代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> LEN = <span class="number">362880</span>;	<span class="comment">// 共9！种状态</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> state[<span class="number">9</span>];	<span class="comment">// 记录八数码排列，即一个状态</span></span><br><span class="line">	<span class="keyword">int</span> dis;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>] = &#123;	<span class="comment">//左，上，右，下顺时针方向</span></span><br><span class="line">	&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> visited[LEN] = &#123;<span class="number">0</span>&#125;;	<span class="comment">// cantor判重，若某状态访问过置为一</span></span><br><span class="line"><span class="keyword">int</span> start[<span class="number">9</span>];</span><br><span class="line"><span class="keyword">int</span> goal[<span class="number">9</span>];</span><br><span class="line"><span class="keyword">long</span> factory[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">24</span>,<span class="number">120</span>,<span class="number">720</span>,<span class="number">5040</span>,<span class="number">40320</span>,<span class="number">362880</span>&#125;;	<span class="comment">// cantor判重用到的常数，从0！到9！</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cantor</span><span class="params">(<span class="keyword">int</span> str[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;n; ++j)</span><br><span class="line">			<span class="keyword">if</span>(str[i] &gt; str[j])</span><br><span class="line">				cnt++;</span><br><span class="line">		result += cnt*factory[n-i<span class="number">-1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!visited[result]) &#123;</span><br><span class="line">		visited[result] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	node head;</span><br><span class="line">	<span class="built_in">memcpy</span>(head.state, start, <span class="keyword">sizeof</span>(head.state));</span><br><span class="line">	head.dis = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">queue</span>&lt;node&gt; q;</span><br><span class="line">	cantor(head.state, <span class="number">9</span>);</span><br><span class="line">	q.push(head);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">		head = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">int</span> z;</span><br><span class="line">		<span class="keyword">for</span>(z=<span class="number">0</span>; z&lt;<span class="number">9</span>; ++z)</span><br><span class="line">			<span class="keyword">if</span>(head.state[z] == <span class="number">0</span>)	<span class="comment">//寻找元素0的位置</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// z的二维转换</span></span><br><span class="line">		<span class="keyword">int</span> x = z%<span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> y = z/<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 向四个方向转移新状态</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">4</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">int</span> nx = x + dir[i][<span class="number">0</span>];</span><br><span class="line">			<span class="keyword">int</span> ny = y + dir[i][<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">int</span> nz = ny*<span class="number">3</span> + nx;	<span class="comment">// 二维化一维</span></span><br><span class="line">			<span class="keyword">if</span>(nx &gt;= <span class="number">0</span> &amp;&amp; nx &lt;<span class="number">3</span> &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; ny &lt; <span class="number">3</span>) &#123;	<span class="comment">//未越界</span></span><br><span class="line">				node nnode;</span><br><span class="line">				<span class="built_in">memcpy</span>(&amp;nnode, &amp;head, <span class="keyword">sizeof</span>(struct node));</span><br><span class="line">				swap(nnode.state[z], nnode.state[nz]);</span><br><span class="line">				nnode.dis++;</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">memcmp</span>(nnode.state, goal, <span class="keyword">sizeof</span>(goal)) == <span class="number">0</span>)	<span class="comment">//与目标状态比较</span></span><br><span class="line">					<span class="keyword">return</span> nnode.dis;</span><br><span class="line">				<span class="keyword">if</span>(cantor(nnode.state, <span class="number">9</span>))	<span class="comment">//判重</span></span><br><span class="line">					q.push(nnode);	<span class="comment">//把新的状态放进队列</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;	<span class="comment">//没找到</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; start[i];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; goal[i];</span><br><span class="line">	<span class="keyword">int</span> num = bfs();</span><br><span class="line">	<span class="keyword">if</span>(num != <span class="number">-1</span>)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"impossible"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> list.Sort()  <span class="comment">// 同时运行 list.Sort ; 不需要等待</span></span><br></pre></td></tr></table></figure>
 
+<p>匿名函数在协程中调用非常方便：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Announce</span><span class="params">(message <span class="keyword">string</span>, delay time.Duration)</span></span> &#123;</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        time.Sleep(delay)</span><br><span class="line">        fmt.Println(message)</span><br><span class="line">    &#125;()  <span class="comment">// 注意括号 - 必须调用函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 Go 中，匿名函数都是闭包：其实现在保证了函数内引用变量的生命周期与函数的活动时间相同。</p>
+<p>这些函数没什么实用性，因为它们没有实现完成时的信号处理。因此，我们需要信道。</p>
+<h3 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h3><p>信道与映射一样，也需要通过 <code>make</code> 来分配内存。其结果值充当了对底层数据结构的引用。 若提供了一个可选的整数形参，它就会为该信道设置缓冲区大小。默认值是零，表示不带缓冲的或同步的信道。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ci := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)            <span class="comment">// 整数无缓冲信道</span></span><br><span class="line">cs := <span class="built_in">make</span>(<span class="keyword">chan</span> *os.File, <span class="number">100</span>)  <span class="comment">// 指向文件的指针的缓冲信道</span></span><br></pre></td></tr></table></figure>
+
+<p>无缓冲信道在通信时会同步交换数据，它能确保（两个 Go 协程的）计算处于确定状态。</p>
+<p>我们在后台启动了排序操作。 信道使得启动的 Go 协程等待排序完成。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)  <span class="comment">// 创建一个无缓冲的类型为整型的 channel 。</span></span><br><span class="line"><span class="comment">//用 goroutine 开始排序；当它完成时，会在信道上发信号。</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    list.Sort()</span><br><span class="line">    c &lt;- <span class="number">1</span>  <span class="comment">// 发送一个信号，这个值并没有具体意义</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingForAWhile()</span><br><span class="line">&lt;-c   <span class="comment">// 等待 sort 执行完成，然后从 channel 取值</span></span><br></pre></td></tr></table></figure>
+
+<p>接收者在收到数据前会一直阻塞。若信道是不带缓冲的，那么在接收者收到值前， 发送者会一直阻塞；若信道是带缓冲的，则发送者仅在值被复制到缓冲区前阻塞； 若缓冲区已满，发送者会一直等待直到某个接收者取出一个值为止。</p>
+<p>带缓冲的信道可被用作信号量，例如限制吞吐量。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sem = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, MaxOutstanding)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handle</span><span class="params">(r *Request)</span></span> &#123;</span><br><span class="line">    sem &lt;- <span class="number">1</span>    <span class="comment">// 等待活动队列清空。</span></span><br><span class="line">    process(r)  <span class="comment">// 可能需要很长时间。</span></span><br><span class="line">    &lt;-sem       <span class="comment">// 完成；使下一个请求可以运行。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Serve</span><span class="params">(queue <span class="keyword">chan</span> *Request)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        req := &lt;-queue</span><br><span class="line">        <span class="keyword">go</span> handle(req)  <span class="comment">// 无需等待 handle 结束。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在此例中，进入的请求会被传递给 handle，它向信道内发送一个值，处理请求后将值从信道中取回，以便让该 “信号量” 准备迎接下一次请求。信道缓冲区的容量决定了同时调用 process 的数量上限，因此我们在初始化时首先要填充至它的容量上限。</p>
+<p>一旦有 <code>MaxOutstanding</code> 个处理程序正在执行 <code>process</code>，缓冲区已满的信道的操作都暂停接收更多操作，直到至少一个程序完成并从缓冲区接收。</p>
+<h3 id="并行化"><a href="#并行化" class="headerlink" title="并行化"></a>并行化</h3><p>这些设计的另一个应用是在多 CPU 核心上实现并行计算。如果计算过程能够被分为几块 可独立执行的过程，它就可以在每块计算结束时向信道发送信号，从而实现并行处理。</p>
+<p>如我们在对一系列向量项进行极耗资源的操作， 而每个项的值计算是完全独立的。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Vector []<span class="keyword">float64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将此操应用至 v[i], v[i+1] ... 直到 v[n-1]</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Vector)</span> <span class="title">DoSome</span><span class="params">(i, n <span class="keyword">int</span>, u Vector, c <span class="keyword">chan</span> <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> ; i &lt; n; i++ &#123;</span><br><span class="line">        v[i] += u.Op(v[i])</span><br><span class="line">    &#125;</span><br><span class="line">    c &lt;- <span class="number">1</span>    <span class="comment">// signal that this piece is done</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们在循环中启动了独立的处理块，每个 CPU 将执行一个处理。 它们有可能以乱序的形式完成并结束，但这没有关系； 我们只需在所有 Go 协程开始后接收，并统计信道中的完成信号即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numCPU = <span class="number">4</span> <span class="comment">// CPU 核心数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Vector)</span> <span class="title">DoAll</span><span class="params">(u Vector)</span></span> &#123;</span><br><span class="line">    c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, numCPU)  <span class="comment">// 缓冲区是可选的，但明显用上更好</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; numCPU; i++ &#123;</span><br><span class="line">        <span class="keyword">go</span> v.DoSome(i*<span class="built_in">len</span>(v)/numCPU, (i+<span class="number">1</span>)*<span class="built_in">len</span>(v)/numCPU, u, c)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 排空信道。</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; numCPU; i++ &#123;</span><br><span class="line">        &lt;-c    <span class="comment">// 等待任务完成</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 一切完成</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意不要混淆并发（concurrency）和并行（parallelism）的概念：并发是用可独立执行组件构造程序的方法， 而并行则是为了效率在多 CPU 上平行地进行计算。尽管 Go 的并发特性能够让某些问题更易构造成并行计算， 但 Go 仍然是种并发而非并行的语言，且 Go 的模型并不适合所有的并行问题。 </p>
 
       
 
@@ -215,7 +237,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ACM水题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Go</a>
         		</li>
       		
 		</ul>
@@ -271,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/04/八数码问题简单解决办法/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/09/GO协程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +307,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/09/批量图片下载小工具/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/03/基于raft算法的分布式KV数据库/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          批量图片自动下载小工具
+          基于raft一致性算法的分布式KV数据库
         
       </div>
     </a>
   
   
-    <a href="/2019/09/17/人性的弱点读书心得/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">人性的弱点读书心得</div>
+    <a href="/2020/11/23/多线程带图形界面的Web服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简易多线程带图形界面的Web服务器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -323,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题分析："><span class="toc-number">1.</span> <span class="toc-text">问题分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决算法："><span class="toc-number">2.</span> <span class="toc-text">解决算法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例分析："><span class="toc-number">3.</span> <span class="toc-text">案例分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-代码："><span class="toc-number">4.</span> <span class="toc-text">C++代码：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#协程（goroutine"><span class="toc-number">1.</span> <span class="toc-text">协程（goroutine)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#信道"><span class="toc-number">2.</span> <span class="toc-text">信道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并行化"><span class="toc-number">3.</span> <span class="toc-text">并行化</span></a></li></ol>
                     </div>
                 </span>
             </div>
